@@ -26,7 +26,7 @@ export default class HomePage extends Component {
     }.bind(this)
 
 
-   
+
 
     loaded = function () {
         if (this.state.user !== null) {
@@ -44,9 +44,6 @@ export default class HomePage extends Component {
         return (
             <div className="homeDiv">
                 {this.loaded()}
-
-
-
             </div>
         )
     }
