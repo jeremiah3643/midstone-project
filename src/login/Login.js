@@ -7,7 +7,7 @@ import Register from "../register/Register";
 export default class Login extends Component {
     constructor(props) {
         super(props)
-        if (this.props.newEmail === null) {
+        if (this.props.activeUser === null) {
             this.state = {
                 email: "",
                 password: ""
@@ -32,11 +32,13 @@ export default class Login extends Component {
             `http://localhost:8088/users?email=${this.state.email}&password=${this.state.password}`
         )
             .then(r => r.json())
-            .then(email => {
+            .then(user => {
                 // User exists. Set local storage, and show home view
-                if (email.length) {
-                    this.props.setActiveUser(email[0].id);
+                if (user.length) {
+                    this.props.setActiveUser(user[0].id);
+                   
                     this.props.showView("HomePage");
+                    
 
                     // User doesn't exist
                 } else {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from "./login/Login";
 import Register from "./register/Register";
+import HomePage from './homePage/Homepage';
 
 export default class App extends Component {
   state = {
@@ -8,7 +9,9 @@ export default class App extends Component {
     searchTerms: "",
     activeUser: sessionStorage.getItem("userId"),
     viewingUser: "",
-    user: ""
+    user: "",
+    newEmail: "",
+    newPassword: ""
   }
 
   setActiveUser = val => {
@@ -24,13 +27,13 @@ export default class App extends Component {
       })
     }
   }
+  
 
-    
-    setViewingUser = function (val) {
-        this.setState({
-            viewingUser: val
-        })
-    }.bind(this)
+  setViewingUser = function (val) {
+    this.setState({
+      viewingUser: val
+    })
+  }.bind(this)
 
   showView = function (e) {
     let view = null;
@@ -56,29 +59,39 @@ export default class App extends Component {
   View = () => {
     if (this.state.currentView === "register") {
       return (
-        <register showView={this.showView} setActiveUser={this.setActiveUser} newEmail={this.state.newEmail} newPassword={this.state.newPassword} />
+        <Register showView={this.showView} setActiveUser={this.setActiveUser} newEmail={this.state.newEmail} newPassword={this.state.newPassword}  />
       )
     }
-    else if  (sessionStorage.getItem("userId") === null) {
-        return (
-          <Login showView={this.showView} setActiveUser={this.setActiveUser} newEmail={this.state.newEmail} newPassword={this.state.newPassword} />
-        )
+    else if (sessionStorage.getItem("userId") === null) {
+      return (
+        <Login showView={this.showView} setActiveUser={this.setActiveUser} activeUser={this.state.activeUser} newEmail={this.state.newEmail} newPassword={this.state.newPassword} />
+      )
     }
     else {
-    switch (this.state.currentView) {
-      case "register":
-        return (
-          <Register showView={this.showView} setActiveUser={this.setActiveUser} setUsernamePassword={this.setUsernamePassword} />
-        )
-      case "login":
-        if (sessionStorage.getItem("userId") === null) {
+      switch (this.state.currentView) {
+        case "register":
           return (
-            <Login showView={this.showView} setActiveUser={this.setActiveUser} newEmail={this.state.newEmail} newPassword={this.state.newPassword} />
+            <Register showView={this.showView} setActiveUser={this.setActiveUser}  />
           )
-        }}}}
-    
-  
-  
+
+        case "login":
+          if (sessionStorage.getItem("userId") === null) {
+            return (
+              <Login showView={this.showView} setActiveUser={this.setActiveUser} />
+            )
+          }
+          break
+        case "HomePage":
+          return (
+            <HomePage showView={this.showView} activeUser={this.state.activeUser} currentView={this.state.currentView} setViewingUser={this.setViewingUser} />
+          )
+        default:
+      }
+    }
+  }
+
+
+
 
 
 

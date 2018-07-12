@@ -1,13 +1,53 @@
 {
-    "users":[
-        {
-            "first": "Jeremiah",
-            "last": "Pritchard",
-            "email": "jeremiah@fake.com",
-            "password": "091690a",
-            "username": "Bassman",
-            "id": 1
-            
-          }
-    ]
+  "users": [
+    {
+      "first": "Jeremiah",
+      "last": "Pritchard",
+      "email": "jeremiah@fake.com",
+      "password": "091690a",
+      "username": "Bassman",
+      "id": 1
+    },
+    {
+      "first": "jaco",
+      "last": "pastorius",
+      "email": "jaco@fake.com",
+      "password": "password",
+      "username": "JacoP",
+      "id": 2
+    },
+    {
+      "first": "steve",
+      "last": "harris",
+      "email": "steve@fake.com",
+      "password": "password",
+      "username": "trooper101",
+      "id": 3
+    },
+    {
+      "first": "alex",
+      "last": "webster",
+      "email": "alex@fake.com",
+      "password": "password",
+      "username": "cannibalalex",
+      "id": 4
+    },
+    {
+      "first": "Testing",
+      "last": "testing",
+      "email": "testing@fake.com",
+      "password": "password",
+      "username": "doesthiscapitalize",
+      "id": 5
+    }
+  ],
+  "threads": [
+    {
+      "userId": 1,
+      "title": "Testing",
+      "initialPost": "This is a test!",
+      "bump": 1530582653251,
+      "id": 1
+    }
+  ]
 }
