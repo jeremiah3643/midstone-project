@@ -6,6 +6,7 @@ import Register from "../register/Register";
 
 export default class Login extends Component {
     constructor(props) {
+        //initial state for email and password fields. Going to Nix the else Statement.
         super(props)
         if (this.props.activeUser === null) {
             this.state = {
@@ -19,12 +20,13 @@ export default class Login extends Component {
             }
         }
     }
+    //event listener that captures input in the login fields.
     handleFieldChange = function (evt) {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     }.bind(this);
-
+//event listener for login button.......checks the server to see if user exists
     handleLogin = function (e) {
         e.preventDefault();
 
@@ -45,7 +47,7 @@ export default class Login extends Component {
                 }
             });
     }.bind(this);
-
+//button click that takes you to the register page
     registerButtonClick = () => {
         this.props.showView("register");
     };

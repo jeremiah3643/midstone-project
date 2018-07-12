@@ -3,7 +3,7 @@ import Login from "../login/Login"
 export default class Navbar extends Component {
 
 
-
+// Handles whether Login or Logout is shown depending on if someone is logged in.
     LoginLogout = () => {
         if (this.props.activeUser === null) {
             return <a className="nav-link" id="nav__login"
@@ -13,6 +13,7 @@ export default class Navbar extends Component {
                 onClick={this.props.viewHandler} href="#">Logout</a>
         }
     }
+    // Event listener for Home button that pass props down back to the Homepage
     handleHome = () => {
         if (this.activeUser === null) {
             <Login showView={this.showView}/>
@@ -25,7 +26,7 @@ export default class Navbar extends Component {
 
 
 
-
+// Basic structure of NAVBAR
     render() {
         return (
             <nav className="navbar is-fixed-top is-black" role="navigation">

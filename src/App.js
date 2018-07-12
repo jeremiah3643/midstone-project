@@ -5,6 +5,7 @@ import HomePage from './homePage/Homepage';
 import Navbar from "./navbar/Navbar";
 
 export default class App extends Component {
+  // Sets initial state. Some values are uselessin APP but get sent down to other components.
   state = {
     currentView: "login",
     searchTerms: "",
@@ -14,7 +15,7 @@ export default class App extends Component {
     newEmail: "",
     newPassword: ""
   }
-
+// Function that takes sessionStorage and converts it into activeUser State.
   setActiveUser = val => {
     if (val) {
       sessionStorage.setItem("userId", val);
@@ -29,13 +30,14 @@ export default class App extends Component {
     }
   }
   
-
+// not quite functional yet. Need more work on forum for this to work.
   setViewingUser = function (val) {
     this.setState({
       viewingUser: val
     })
   }.bind(this)
 
+  //Written not quite sure how this function works as I did not write it.....but takes HTML Ids and converts it into the View function
   showView = function (e) {
     let view = null;
 
@@ -57,6 +59,7 @@ export default class App extends Component {
     });
   }.bind(this);
 
+  // This function handles all the logic for which pages get shown and passes down important states and functions for different pages.
   View = () => {
     if (this.state.currentView === "register") {
       return (
@@ -95,7 +98,7 @@ export default class App extends Component {
 
 
 
-
+// Displays JSX onto the DOM
   render() {
     return (
       <div className="App">

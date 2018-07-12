@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 function validate(email, password) {
-    // true means invalid, so our conditions got reversed
+    // true means invalid, so our conditions got reversed......Not sure I need this as this was scalped from another page.
     return {
         email: email.length === 0,
         password: password.length === 0,
@@ -12,6 +12,7 @@ function validate(email, password) {
 export default class Register extends Component {
     constructor(props) {
         super(props);
+        //Initial state for Register Fields
         this.state = {
             firstname: "",
             lastname: "",
@@ -27,7 +28,7 @@ export default class Register extends Component {
         this.usernameChange = this.usernameChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+//List of event handlers for each field
     firstnameChange(event) {
         this.setState({ firstname: event.target.value });
     }
