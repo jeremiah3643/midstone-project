@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from "./login/Login";
 import Register from "./register/Register";
 import HomePage from './homePage/Homepage';
+import Navbar from "./navbar/Navbar";
 
 export default class App extends Component {
   state = {
@@ -98,6 +99,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+      <Navbar 
+      showView={this.showView}
+      activeUser={this.activeUser}
+      />
         {this.View()}
 
       </div>
