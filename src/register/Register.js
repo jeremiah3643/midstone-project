@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from "../App";
+
 
 function validate(email, password) {
     // true means invalid, so our conditions got reversed
