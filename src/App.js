@@ -80,12 +80,12 @@ export default class App extends Component {
             return (
               <Login showView={this.showView} setActiveUser={this.setActiveUser} />
             )
-          }
-          break
+          }    
         case "HomePage":
           return (
             <HomePage showView={this.showView} activeUser={this.state.activeUser} currentView={this.state.currentView} setViewingUser={this.setViewingUser} />
           )
+       
         default:
       }
     }
@@ -100,8 +100,8 @@ export default class App extends Component {
     return (
       <div className="App">
       <Navbar 
-      showView={this.showView}
-      activeUser={this.activeUser}
+      viewHandler={this.showView}
+      activeUser={this.state.activeUser}
       />
         {this.View()}
 

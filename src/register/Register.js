@@ -76,7 +76,7 @@ export default class Register extends Component {
 
 
                 else {
-                    debugger
+                    
                     fetch("http://localhost:8088/users", {
                         method: "POST",
                         headers: {

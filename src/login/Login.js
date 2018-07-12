@@ -36,9 +36,8 @@ export default class Login extends Component {
                 // User exists. Set local storage, and show home view
                 if (user.length) {
                     this.props.setActiveUser(user[0].id);
-                   
                     this.props.showView("HomePage");
-                    
+
 
                     // User doesn't exist
                 } else {
