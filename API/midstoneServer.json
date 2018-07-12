@@ -1,0 +1,13 @@
+{
+    "users":[
+        {
+            "first": "Jeremiah",
+            "last": "Pritchard",
+            "email": "jeremiah@fake.com",
+            "password": "091690a",
+            "username": "Bassman",
+            "id": 1
+            
+          }
+    ]
+}
