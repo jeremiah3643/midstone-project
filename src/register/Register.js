@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from "../App";
+
 
 function validate(email, password) {
     // true means invalid, so our conditions got reversed
@@ -76,7 +76,7 @@ export default class Register extends Component {
 
 
                 else {
-                    debugger
+                    
                     fetch("http://localhost:8088/users", {
                         method: "POST",
                         headers: {

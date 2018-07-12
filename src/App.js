@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from "./login/Login";
 import Register from "./register/Register";
 import HomePage from './homePage/Homepage';
+import Navbar from "./navbar/Navbar";
 
 export default class App extends Component {
   state = {
@@ -79,12 +80,12 @@ export default class App extends Component {
             return (
               <Login showView={this.showView} setActiveUser={this.setActiveUser} />
             )
-          }
-          break
+          }    
         case "HomePage":
           return (
             <HomePage showView={this.showView} activeUser={this.state.activeUser} currentView={this.state.currentView} setViewingUser={this.setViewingUser} />
           )
+       
         default:
       }
     }
@@ -98,6 +99,10 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+      <Navbar 
+      viewHandler={this.showView}
+      activeUser={this.state.activeUser}
+      />
         {this.View()}
 
       </div>
