@@ -51,6 +51,7 @@ export default class App extends Component {
     }
     if (view === "logout") {
       this.setActiveUser(null);
+      this.setViewingUser(null);
     }
 
     // Update state to correct view will be rendered
