@@ -35,7 +35,7 @@ export default class Login extends Component {
         )
             .then(r => r.json())
             .then(user => {
-                // User exists. Set local storage, and show home view
+                // User exists. Set state and session storage, and show home view
                 if (user.length) {
                     this.props.setActiveUser(user[0].id);
                     this.props.showView("HomePage");
