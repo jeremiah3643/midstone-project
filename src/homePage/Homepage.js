@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
-
+import "../styles.css"
 export default class HomePage extends Component {
     state = {
         user: null,
-        username: null
+        username: null,
+        pic: null,
     }
 
     load = function () {
@@ -17,6 +17,7 @@ export default class HomePage extends Component {
                 .then(r => r.json()).then(response => {
                     this.setState({ user: response })
                     this.setState({ username: response.username })
+                    this.setState({ pic: response.img })
                     this.props.setViewingUser(response)
                 }
 
@@ -28,10 +29,22 @@ export default class HomePage extends Component {
 
 
 
+
+
+picLoader =() => {
+    if (this.props.activeUser == 1)
+    return(
+        <img src={require('../img/image1.jpg')} className="profileImage"/>
+    )
+}
+
+
     loaded = function () {
         if (this.state.user !== null) {
             return <div>
                 <h2 className="welcomeTag">{`Welcome ${this.state.username}`}</h2>
+                <picLoader/>
+                
             </div>
         }
     }.bind(this)
@@ -43,6 +56,7 @@ export default class HomePage extends Component {
     render() {
         return (
             <div className="homeDiv">
+            <this.picLoader/>
                 {this.loaded()}
             </div>
         )

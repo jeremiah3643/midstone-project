@@ -6,7 +6,8 @@
       "email": "jeremiah@fake.com",
       "password": "091690a",
       "username": "Bassman",
-      "id": 1
+      "id": 1,
+      "img":"../img/image1.jpg"
     },
     {
       "first": "jaco",
