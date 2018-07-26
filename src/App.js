@@ -3,6 +3,7 @@ import Login from "./login/Login";
 import Register from "./register/Register";
 import HomePage from './homePage/Homepage';
 import Navbar from "./navbar/Navbar";
+import Profile from './profile/Profile';
 
 export default class App extends Component {
   // Sets initial state. Some values are uselessin APP but get sent down to other components.
@@ -89,7 +90,10 @@ export default class App extends Component {
           return (
             <HomePage showView={this.showView} activeUser={this.state.activeUser} currentView={this.state.currentView} setViewingUser={this.setViewingUser} />
           )
-       
+       case "profile":
+       return(
+         <Profile showView={this.showView} activeUser={this.state.activeUser} currentView = {this.state.currentView} viewingUser={this.state.viewingUser}/>
+       )
         default:
       }
     }
